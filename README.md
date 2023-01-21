@@ -2,11 +2,9 @@
 
 UniCheck is a web application project with the aim to work as a management system for the Faculty of Mathematics and Informatics of the University of Plovdiv "Paisii Hilendarski".
 
-<img src="https://user-images.githubusercontent.com/83454633/213873909-d87b94d6-aabd-47ed-abba-1869ed7bfe0a.jpg" width="800">
-
 **Functionalities:**
-- Students have access to their current information in the system and can check their grades from the taken exams of the disciplines;
-- Inspectors have access to all system functionalities, which include creating, editing, viewing details, deleting and additional features for searching and exporting reports.
+- Students have access to their current information in the system and can check their grades from the taken exams of the courses they have enrolled in based on their specialty at the university;
+- Inspectors have access to all system functionalities, which include creating, editing, viewing details, deleting and additional features for searching and exporting reports with information about specialties.
 
 **Technologies & Libraries:**
 - Microsoft Visual Studio 2022;
