@@ -1,0 +1,80 @@
+﻿@model UniCheckManagementSystem.Models.Student
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Изтриване</h2>
+
+<h3>Сигурни ли сте, че искате да изтриете това?</h3>
+<div>
+    <h4>Студент</h4>
+    <hr />
+    <div class="panel panel-default" style="width: 60%">
+        <div class="panel-heading">Информация за студент</div>
+        <div class="panel-body">
+            <div style="display: inline-block; padding: 15px; vertical-align: top">
+                @if (Model.ImagePath != null)
+                {
+                    <img src="@Url.Content(Model.ImagePath)" width="250" height="250" />
+                }
+            </div>
+            <div style="display: inline-block; padding: 15px; vertical-align: top">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.FacultyNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.FacultyNumber)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.FirstName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.FirstName)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.LastName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.LastName)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Специалност
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Specialty.Name)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.EnrollmentDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.EnrollmentDate)
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Изтрий" class="btn btn-danger" /> |
+            @Html.ActionLink("Назад", "Index", null, new { @class = "btn btn-primary btn-sm" })
+        </div>
+    }
+</div>

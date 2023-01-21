@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniCheck Management System</title>
+    <style>
+        body {
+            padding-top: 0px !important;
+        }
+
+        .form-control {
+            display: inline-block !important;
+            margin-left: 5px !important;
+            margin-right: 5px !important
+        }
+    </style>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-header">
+                <a class="navbar-brand">UniCheck</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Начало", "Index", "Home", null, new { @class = "active", @style = "text-decoration:none;" })</li>
+                    <li>@Html.ActionLink("Контакти", "Contact", "Home", null, new { @style = "text-decoration:none;" })</li>
+                    @if (Convert.ToString(Session["UserName"]).Equals("admin"))
+                    {
+                        <li>@Html.ActionLink("Доклади", "Reports", "Home", null, new { @style = "text-decoration:none;" })</li>
+                        <li>@Html.ActionLink("Студенти", "Index", "Student", null, new { @style = "text-decoration:none;" })</li>
+                        <li>@Html.ActionLink("Курсове", "Index", "Course", null, new { @style = "text-decoration:none;" })</li>
+                        <li>@Html.ActionLink("Специалности", "Index", "Specialty", null, new { @style = "text-decoration:none;" })</li>
+                        <li>@Html.ActionLink("Изпити", "Index", "Enrollment", null, new { @style = "text-decoration:none;" })</li>
+                        <li>@Html.ActionLink("Катедри", "Index", "Department", null, new { @style = "text-decoration:none;" })</li>
+                        <li>@Html.ActionLink("Преподаватели", "Index", "Lecturer", null, new { @style = "text-decoration:none;" })</li>
+                    }
+                    @if (Convert.ToString(Session["UserName"]) != "admin" && !string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+                    {
+                        <li>@Html.ActionLink("Детайли за студент", "ViewGrades", "Student", null, new { @style = "text-decoration:none;" })</li>
+                    }
+                    @Html.Partial("_LoginPartial")
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @Html.Partial("_Notification")
+        @RenderBody()
+        <hr />
+        <footer class="footer text-muted">
+            <p>&copy; @DateTime.Now.Year - UniCheck Management System</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

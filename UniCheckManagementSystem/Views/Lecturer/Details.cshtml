@@ -1,0 +1,73 @@
+﻿@model UniCheckManagementSystem.Models.Lecturer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Детайли</h2>
+
+<div>
+    <h4>Преподавател</h4>
+    <hr />
+    <div class="panel panel-default" style="width: 65%">
+        <div class="panel-heading">Информация за преподавател</div>
+        <div class="panel-body">
+            <div style="display: inline-block; padding: 15px; vertical-align: top">
+                @if (Model.ImagePath != null)
+                {
+                    <img src="@Url.Content(Model.ImagePath)" width="250" height="250" />
+                }
+            </div>
+            <div style="display: inline-block; padding: 15px; vertical-align: top">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.FirstName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.FirstName)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.LastName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.LastName)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Department.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Department.Name)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.HireDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.HireDate)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Office)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Office)
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Редактирай", "Edit", new { id = Model.LecturerId }, new { @class = "btn btn-warning btn-sm" }) |
+    @Html.ActionLink("Назад", "Index", null, new { @class = "btn btn-primary btn-sm" })
+</p>

@@ -1,0 +1,49 @@
+﻿@model UniCheckManagementSystem.Models.Course
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Детайли</h2>
+
+<div>
+    <h4>Курс</h4>
+    <hr />
+    <div class="panel panel-default">
+        <div class="panel-heading">Информация за курс</div>
+        <div class="panel-body">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Title)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Credits)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Credits)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Description)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Редактирай", "Edit", new { id = Model.CourseId }, new { @class = "btn btn-warning btn-sm" }) |
+    @Html.ActionLink("Назад", "Index", null, new { @class = "btn btn-primary btn-sm" })
+</p>

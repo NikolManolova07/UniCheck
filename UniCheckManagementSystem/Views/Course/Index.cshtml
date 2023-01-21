@@ -1,0 +1,47 @@
+﻿@model PagedList.IPagedList<UniCheckManagementSystem.Models.Course>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Курсове</h2>
+
+<p>
+    @Html.ActionLink(" Създай нов", "Create", null, new { @class = "btn btn-success btn-sm bi bi-plus-circle" })
+</p>
+<table class="table table-striped table-hover">
+    <tr class="active">
+        <th>
+            Име
+        </th>
+        <th>
+            @Html.ActionLink("Кредити", "Index", new { sortOrder = ViewBag.CreditsSortParm }, new { @style = "text-decoration:none;" })
+            &nbsp&nbsp<i class="bi bi-arrow-down-up"></i>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Credits)
+            </td>
+            <td>
+                @Html.ActionLink("Редактирай", "Edit", new { id = item.CourseId }, new { @class = "btn btn-warning btn-sm" }) |
+                @Html.ActionLink("Детайли", "Details", new { id = item.CourseId }, new { @class = "btn btn-info btn-sm" }) |
+                @Html.ActionLink("Изтрий", "Delete", new { id = item.CourseId }, new { @class = "btn btn-danger btn-sm" })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) от @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort }))

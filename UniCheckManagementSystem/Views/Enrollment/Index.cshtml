@@ -1,0 +1,60 @@
+﻿@model IEnumerable<UniCheckManagementSystem.Models.Enrollment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Изпити</h2>
+
+<p>
+    @Html.ActionLink(" Създай нов", "Create", null, new { @class = "btn btn-success btn-sm bi bi-plus-circle" })
+</p>
+@using (Html.BeginForm())
+{
+    <p>
+        Търсене по курс: @Html.DropDownList("searchCourseId", (IEnumerable<SelectListItem>)ViewBag.Courses, "Search courses...", new { @class = "form-group form-control" })
+        <button class="btn btn-default" type="submit">Search</button>
+    </p> 
+}
+<table class="table table-striped table-hover">
+    <tr class="active">
+        <th>
+            Име
+        </th>
+        <th>
+            Факултетен номер
+        </th>
+        <th>
+            Оценка
+        </th>
+        <th>
+            Дата на изпита
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.FacultyNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExamDate)
+            </td>
+            <td>
+                @Html.ActionLink("Редактирай", "Edit", new { id = item.EnrollmentId }, new { @class = "btn btn-warning btn-sm" }) |
+                @Html.ActionLink("Детайли", "Details", new { id = item.EnrollmentId }, new { @class = "btn btn-info btn-sm" }) |
+                @Html.ActionLink("Изтрий", "Delete", new { id = item.EnrollmentId }, new { @class = "btn btn-danger btn-sm" })
+            </td>
+        </tr>
+    }
+
+</table>
+

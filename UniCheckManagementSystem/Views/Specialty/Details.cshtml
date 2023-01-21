@@ -1,0 +1,73 @@
+﻿@model UniCheckManagementSystem.Models.Specialty
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Детайли</h2>
+
+<div>
+    <h4>Специалност</h4>
+    <hr />
+    <div class="panel panel-default">
+        <div class="panel-heading">Информация за специалност</div>
+        <div class="panel-body">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Name)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.ProfessionalStream)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.ProfessionalStream)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Degree)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Degree)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Qualification)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Qualification)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.ModeOfStudy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.ModeOfStudy)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Length)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Length)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Редактирай", "Edit", new { id = Model.SpecialtyId }, new { @class = "btn btn-warning btn-sm" }) |
+    @Html.ActionLink("Назад", "Index", null, new { @class = "btn btn-primary btn-sm" })
+</p>

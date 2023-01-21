@@ -1,0 +1,9 @@
+﻿@if (!string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+{
+    <li><a style="color:#ffff">Здравейте, @Session["UserName"]</a></li>
+    <li>@Html.ActionLink("Изход", "LogOut", "Account", routeValues: null, htmlAttributes: new { id = "logoutLink" })</li>
+}
+else
+{
+    <li>@Html.ActionLink("Вход", "LogIn", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+}

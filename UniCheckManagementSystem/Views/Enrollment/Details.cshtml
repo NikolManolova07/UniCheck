@@ -1,0 +1,57 @@
+﻿@model UniCheckManagementSystem.Models.Enrollment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Детайли</h2>
+
+<div>
+    <h4>Изпит</h4>
+    <hr />
+    <div class="panel panel-default">
+        <div class="panel-heading">Информация за изпит</div>
+        <div class="panel-body">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Course.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Course.Title)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Student.FacultyNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Student.FacultyNumber)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Grade)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Grade)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.ExamDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.ExamDate)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Редактирай", "Edit", new { id = Model.EnrollmentId }, new { @class = "btn btn-warning btn-sm" }) |
+    @Html.ActionLink("Назад", "Index", null, new { @class = "btn btn-primary btn-sm" })
+</p>

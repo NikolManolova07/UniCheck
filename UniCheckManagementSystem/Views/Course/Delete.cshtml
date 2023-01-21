@@ -1,0 +1,56 @@
+﻿@model UniCheckManagementSystem.Models.Course
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Изтриване</h2>
+
+<h3>Сигурни ли сте, че искате да изтриете това?</h3>
+<div>
+    <h4>Курс</h4>
+    <hr />
+    <div class="panel panel-default">
+        <div class="panel-heading">Информация за курс</div>
+        <div class="panel-body">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Title)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Credits)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Credits)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Description)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Изтрий" class="btn btn-danger" /> |
+            @Html.ActionLink("Назад", "Index", null, new { @class = "btn btn-primary btn-sm" })
+        </div>
+    }
+</div>

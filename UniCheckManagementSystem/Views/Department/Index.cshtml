@@ -1,0 +1,45 @@
+﻿@model IEnumerable<UniCheckManagementSystem.Models.Department>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Катедри</h2>
+
+<p>
+    @Html.ActionLink(" Създай нова", "Create", null, new { @class = "btn btn-success btn-sm bi bi-plus-circle" })
+</p>
+<table class="table table-striped table-hover">
+    <tr class="active">
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Faculty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Faculty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.ActionLink("Редактирай", "Edit", new { id=item.DepartmentId }, new { @class = "btn btn-warning btn-sm" }) |
+            @Html.ActionLink("Детайли", "Details", new { id=item.DepartmentId }, new { @class = "btn btn-info btn-sm" }) |
+            @Html.ActionLink("Изтрий", "Delete", new { id=item.DepartmentId }, new { @class = "btn btn-danger btn-sm" })
+        </td>
+    </tr>
+}
+
+</table>

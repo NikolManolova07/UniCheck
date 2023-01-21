@@ -1,0 +1,64 @@
+﻿@model UniCheckManagementSystem.Models.Enrollment
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Изтриване</h2>
+
+<h3>Сигурни ли сте, че искате да изтриете това?</h3>
+<div>
+    <h4>Изпит</h4>
+    <hr />
+    <div class="panel panel-default">
+        <div class="panel-heading">Информация за изпит</div>
+        <div class="panel-body">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Course.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Course.Title)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Student.FacultyNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Student.FacultyNumber)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Grade)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Grade)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.ExamDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.ExamDate)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Изтрий" class="btn btn-danger" /> |
+            @Html.ActionLink("Назад", "Index", null, new { @class = "btn btn-primary btn-sm" })
+        </div>
+    }
+</div>

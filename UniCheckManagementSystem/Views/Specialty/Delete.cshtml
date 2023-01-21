@@ -1,0 +1,80 @@
+﻿@model UniCheckManagementSystem.Models.Specialty
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Изтриване</h2>
+
+<h3>Сигурни ли сте, че искате да изтриете това?</h3>
+<div>
+    <h4>Специалност</h4>
+    <hr />
+    <div class="panel panel-default">
+        <div class="panel-heading">Информация за специалност</div>
+        <div class="panel-body">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Name)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.ProfessionalStream)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.ProfessionalStream)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Degree)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Degree)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Qualification)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Qualification)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.ModeOfStudy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.ModeOfStudy)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Length)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Length)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Изтрий" class="btn btn-danger" /> |
+            @Html.ActionLink("Назад", "Index", null, new { @class = "btn btn-primary btn-sm" })
+        </div>
+    }
+</div>
