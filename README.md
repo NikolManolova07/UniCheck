@@ -2,6 +2,8 @@
 
 UniCheck is a web application project with the aim to work as a management system for the Faculty of Mathematics and Informatics of the University of Plovdiv "Paisii Hilendarski". During login process authentication and authorization of the users is achieved with the accounts' data and assigned roles of an admin or a student. Sample data is loaded to show the functionalities of the UniCheck Management System.
 
+<img src="https://user-images.githubusercontent.com/83454633/213876406-b14d129f-8eaf-4019-914a-2a4df7020c69.jpg" width="800">
+
 **Functionalities:**
 - Students have access to their current information in the system and can check their grades from the taken exams of the courses they have enrolled in based on their specialty at the university;
 - Registrars have access to all system functionalities, which include creating, editing, viewing details, deleting and additional features for searching and exporting reports with information about specialties.
@@ -13,6 +15,6 @@ UniCheck is a web application project with the aim to work as a management syste
 - Microsoft SQL Server Express LocalDB;
 - Bootstrap, Toastr.
 
-<img src="https://user-images.githubusercontent.com/83454633/213876406-b14d129f-8eaf-4019-914a-2a4df7020c69.jpg" width="800">
+https://user-images.githubusercontent.com/83454633/213880678-da05e5e4-e593-4ba4-94aa-a761c5fe1e2e.mp4
 
-<img width="300" src="https://user-images.githubusercontent.com/83454633/213876661-0f044285-8219-40d4-9df5-17c3867aafa3.mp4" >
+https://user-images.githubusercontent.com/83454633/213876661-0f044285-8219-40d4-9df5-17c3867aafa3.mp4
