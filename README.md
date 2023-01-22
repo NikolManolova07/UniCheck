@@ -19,7 +19,3 @@
 - Entity Framework;
 - Microsoft SQL Server Express LocalDB;
 - Bootstrap, Toastr.
-
-https://user-images.githubusercontent.com/83454633/213880678-da05e5e4-e593-4ba4-94aa-a761c5fe1e2e.mp4
-
-https://user-images.githubusercontent.com/83454633/213876661-0f044285-8219-40d4-9df5-17c3867aafa3.mp4
