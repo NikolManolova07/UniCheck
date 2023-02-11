@@ -18,7 +18,7 @@
 - C#, ASP.NET MVC;
 - Entity Framework;
 - Microsoft SQL Server Express LocalDB;
-- Bootstrap, Toastr
+- Bootstrap, Toastr.
 
 
 https://user-images.githubusercontent.com/83454633/213935658-7fc15410-65cc-4e47-a0b6-c34d7d76acaf.mp4
